@@ -14,7 +14,7 @@ from pybricks.media.ev3dev import SoundFile, ImageFile
 
 # Create your objects here.
 ev3 = EV3Brick()
-touch_sensor = TouchSensor(Port.S2)
+touch_sensor = TouchSensor(Port.S1)
 left_motor = Motor(Port.B)
 right_motor = Motor(Port.A)
 
@@ -22,6 +22,5 @@ right_motor = Motor(Port.A)
 harvier = DriveBase(left_motor, right_motor, wheel_diameter=55.5, axle_track=104)
 
 # Write your program here.
-harvier.drive(200, 0)
-if touch_sensor.pressed():
-    stop()
+while not touch_sensor.pressed():
+    harvier.drive(200, 0)
