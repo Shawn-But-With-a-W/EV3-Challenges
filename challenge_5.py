@@ -24,3 +24,5 @@ harvier = DriveBase(left_motor, right_motor, wheel_diameter=55.5, axle_track=104
 # Write your program here.
 while ultrasnoic_sensor.distance() > 500:
     harvier.drive(200, 0)
+
+harvier.turn(90)
