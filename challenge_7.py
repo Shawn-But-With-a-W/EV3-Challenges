@@ -14,7 +14,7 @@ from pybricks.media.ev3dev import SoundFile, ImageFile
 
 # Create your objects here.
 ev3 = EV3Brick()
-ultrasnoic_sensor = UltrasonicSensor(Port.S3)
+color_sensor = ColorSensor(Port.S2)
 left_motor = Motor(Port.B)
 right_motor = Motor(Port.A)
 
@@ -22,5 +22,10 @@ right_motor = Motor(Port.A)
 harvier = DriveBase(left_motor, right_motor, wheel_diameter=55.5, axle_track=104)
 
 # Write your program here.
-while ultrasnoic_sensor.distance() > 250:
-    harvier.drive(200, 0)
+while True:
+    harvier.drive(30, 0)
+    if color_sensor.color() == None:
+        harvier.drive(-90, 45)
+        continue
+    if ultrasnoic_sensor.distance() < 250:
+        harvier.drive(-90, 45)
