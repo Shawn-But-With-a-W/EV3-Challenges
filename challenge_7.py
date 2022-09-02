@@ -15,6 +15,7 @@ from pybricks.media.ev3dev import SoundFile, ImageFile
 # Create your objects here.
 ev3 = EV3Brick()
 color_sensor = ColorSensor(Port.S2)
+ultrasnoic_sensor = UltrasonicSensor(Port.S3)
 left_motor = Motor(Port.B)
 right_motor = Motor(Port.A)
 
