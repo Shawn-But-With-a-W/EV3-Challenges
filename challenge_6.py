@@ -23,7 +23,7 @@ harvier = DriveBase(left_motor, right_motor, wheel_diameter=55.5, axle_track=104
 
 # Write your program here.
 while True:
-    harvier.drive(30, 0)
+    harvier.drive(60, 0)
     if color_sensor.color() == None:
-        harvier.drive(-90, 45)
-        continue
+        harvier.straight(-120)
+        harvier.turn(115)
