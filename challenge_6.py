@@ -26,4 +26,4 @@ while True:
     harvier.drive(60, 0)
     if color_sensor.color() == None:
         harvier.straight(-120)
-        harvier.turn(115)
+        harvier.turn(120)
